@@ -5,18 +5,18 @@ const config = require('../../config');
 module.exports = async (ctx) => {
     const response = await axios({
         method: 'get',
-        url: 'https://http://www.yingjiesheng.com/commend-fulltime-2.html',
+        url: 'https://www.jianshu.com',
         headers: {
             'User-Agent': config.ua,
-            Referer: 'http://www.yingjiesheng.com',
+            Referer: 'https://www.jianshu.com',
         },
     });
-    
-    const data=response.date;
-    
+
+    const data = response.data;
+
     const $ = cheerio.load(data);
     const list = $('.note-list li');
-    
+
     ctx.state.data = {
         title: '应届生',
         link: 'https://www.jianshu.com',
