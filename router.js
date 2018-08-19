@@ -82,7 +82,8 @@ router.get('/', async (ctx) => {
     });
 });
 
-router.get('/yingjiesheng/home', require('./routes/yingjiesheng/home'));
+router.get('/yingjiesheng/all', require('./routes/yingjiesheng/all'));
+router.get('/yingjiesheng/top', require('./routes/yingjiesheng/top'));
 
 // RSSHub
 router.get('/rsshub/rss', require('./routes/rsshub/rss'));
