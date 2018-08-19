@@ -5,10 +5,9 @@ const config = require('../../config');
 module.exports = async (ctx) => {
     const response = await axios({
         method: 'get',
-        url: 'https://www.jianshu.com',
+        url: 'http://www.yingjiesheng.com/commend-fulltime-2.html',
         headers: {
             'User-Agent': config.ua,
-            Referer: 'https://www.jianshu.com',
         },
     });
 
@@ -19,7 +18,7 @@ module.exports = async (ctx) => {
 
     ctx.state.data = {
         title: '应届生',
-        link: 'https://www.jianshu.com',
+        link: 'http://www.yingjiesheng.com/commend-fulltime-2.html',
         description: $('meta[name="description"]').attr('content'),
         item:
             list &&
