@@ -19,7 +19,7 @@ module.exports = async (ctx) => {
     const list = $('.jobList tr');
 
     ctx.state.data = {
-        title: '应届生',
+        title: '应届生求职网',
         link: 'http://www.yingjiesheng.com/commend-fulltime-2.html',
         description: $('meta[name="description"]').attr('content'),
         item:
@@ -28,9 +28,9 @@ module.exports = async (ctx) => {
                 .map((index, item) => {
                     item = $(item);
                     return {
-                        title: item.find('.title').text(),
-                        description: `titel：${item.find('a').text()}<br><img referrerpolicy="no-referrer" src="https:${item.find('.img-blur').data('echo')}">`,
-                        pubDate: new Date(item.find('.time').data('shared-at')).toUTCString(),
+                        title: item.find('a').text(),
+                        //description: `title：${item.find('a').text()}<br><img referrerpolicy="no-referrer" src="https:${item.find('.img-blur').data('echo')}">`,
+                        pubDate: new Date(item.find('date').text()）.toUTCString(),
                         link: `${item.find('a').attr('href')}`,
                     };
                 })
