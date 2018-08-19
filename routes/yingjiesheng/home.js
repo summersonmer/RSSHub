@@ -1,13 +1,7 @@
 const axios = require('../../utils/axios');
 const cheerio = require('cheerio');
 const config = require('../../config');
-
-axios.interceptors.request.use(function (request) {
-  request['headers']['common']['Accept'] = 'application/json;charset=GBK;';
-  return request;
-}, function (error) {
-  return Promise.reject(error);
-});
+const iconv = require("iconv-lite");
 
 module.exports = async (ctx) => {
     const response = await axios({
@@ -18,7 +12,7 @@ module.exports = async (ctx) => {
         },
     });
 
-    const data = response.data;
+    const data = iconv.decode(response.data,'GBK');
 
     const $ = cheerio.load(data);
     const list = $('.jobList tr');
