@@ -12,7 +12,7 @@ module.exports = async (ctx) => {
         },
     });
 
-    const data = iconv.decode(response.data,'GBK');
+    const data = iconv.decode(response.data,'gbk');
 
     const $ = cheerio.load(data);
     const list = $('.jobList tr');
