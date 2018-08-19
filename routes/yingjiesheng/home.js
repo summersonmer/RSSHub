@@ -10,6 +10,7 @@ module.exports = async (ctx) => {
         headers: {
             'User-Agent': config.ua,
         },
+        responseType: 'arraybuffer'
     });
 
     const data = iconv.decode(response.data,'gbk');
