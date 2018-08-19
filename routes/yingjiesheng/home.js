@@ -14,7 +14,7 @@ module.exports = async (ctx) => {
     const data = response.data;
 
     const $ = cheerio.load(data);
-    const list = $('.jobList li');
+    const list = $('.jobList tr');
 
     ctx.state.data = {
         title: '应届生',
