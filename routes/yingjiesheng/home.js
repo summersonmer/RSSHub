@@ -2,6 +2,13 @@ const axios = require('../../utils/axios');
 const cheerio = require('cheerio');
 const config = require('../../config');
 
+axios.interceptors.request.use(function (request) {
+  request['headers']['common']['Accept'] = 'application/json;charset=GBK;';
+  return request;
+}, function (error) {
+  return Promise.reject(error);
+});
+
 module.exports = async (ctx) => {
     const response = await axios({
         method: 'get',
