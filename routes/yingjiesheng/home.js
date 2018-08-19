@@ -1,7 +1,7 @@
 const axios = require('../../utils/axios');
 const cheerio = require('cheerio');
 const config = require('../../config');
-const iconv = require("iconv-lite");
+const iconv = require('iconv-lite');
 
 module.exports = async (ctx) => {
     const response = await axios({
