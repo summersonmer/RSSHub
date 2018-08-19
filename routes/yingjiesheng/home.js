@@ -27,9 +27,9 @@ module.exports = async (ctx) => {
                     item = $(item);
                     return {
                         title: item.find('.title').text(),
-                        description: `titel：${item.find('a').text()}<br>href：${item.find('a').attr('href')}<br><img referrerpolicy="no-referrer" src="https:${item.find('.img-blur').data('echo')}">`,
+                        description: `titel：${item.find('a').text()}<br><img referrerpolicy="no-referrer" src="https:${item.find('.img-blur').data('echo')}">`,
                         pubDate: new Date(item.find('.time').data('shared-at')).toUTCString(),
-                        link: `https://www.jianshu.com${item.find('.title').attr('href')}`,
+                        link: `${item.find('a').attr('href')}`,
                     };
                 })
                 .get(),
