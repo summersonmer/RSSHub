@@ -30,7 +30,7 @@ module.exports = async (ctx) => {
                     return {
                         title: item.find('a').text(),
                         //description: `title：${item.find('a').text()}<br><img referrerpolicy="no-referrer" src="https:${item.find('.img-blur').data('echo')}">`,
-                        pubDate: new Date(item.find('date').text()）.toUTCString(),
+                        pubDate: new Date(item.find('td').text()).toUTCString(),
                         link: `${item.find('a').attr('href')}`,
                     };
                 })
