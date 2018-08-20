@@ -19,7 +19,7 @@ module.exports = async (ctx) => {
     const list = $('.jobList tr');
 
     ctx.state.data = {
-        title: '应届生求职网',
+        title: '应届生求职网 - 置顶',
         link: 'http://www.yingjiesheng.com/commend-fulltime-1.html',
         description: $('meta[name="description"]').attr('content'),
         item:
